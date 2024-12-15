@@ -20,8 +20,11 @@ if [ -d "$install_dir/$app" ]; then
 	mv "$install_dir/$app" "$install_dir/web"
 	ynh_delete_file_checksum "$install_dir/$app/sites/default/settings.php"
 	ynh_store_file_checksum "$install_dir/web/sites/default/settings.php"
+	ynh_delete_file_checksum "$install_dir/$app/sites/default/civicrm.settings.php"
+	ynh_store_file_checksum "$install_dir/web/sites/default/civicrm.settings.php"
+
 	mv "$install_dir/drush/sites/$app.site.yml" "$install_dir/drush/sites/self.site.yml"
-	ynh_delete_file_checksum "$install_dir/drush/sites/$app.site.yml"	
+	ynh_delete_file_checksum "$install_dir/drush/sites/$app.site.yml"
 fi
 
 if ! grep -q "\$settings['trusted_host_patterns'] = ['^$domain\$'];" "$install_dir/web/sites/default/settings.php"; then
