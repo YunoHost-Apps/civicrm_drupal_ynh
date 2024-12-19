@@ -7,7 +7,7 @@ name = "CiviCRM on Drupal"
 description.en = "CRM for non-profits, NGOs and advocacy organizations"
 description.fr = "CRM pour organisations à but non lucratif et ONG"
 
-version = "2024.12.15~ynh1"
+version = "2024.12.19~ynh1"
 
 maintainers = ["yalh76"]
 
