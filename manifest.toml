@@ -88,7 +88,6 @@ ram.runtime = "50M"
         "php8.3-mbstring",
         "php8.3-uploadprogress",
         "php8.3-apcu",
-        "php8.3-json",
         "php8.3-simplexml",
         "php8.3-curl",
         "php8.3-soap",
