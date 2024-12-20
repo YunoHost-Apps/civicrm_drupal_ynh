@@ -16,3 +16,4 @@ test_format = 1.0
     # -------------------------------
 
     test_upgrade_from.c72c8bf3487e8295ce4216fccb40e8b2f0d6c690.name = "Upgrade from 2024.12.10~ynh1"
+    test_upgrade_from.962179a5181194399935b3034254a995b46b1c44.name = "Upgrade from 2024.12.15~ynh1"
