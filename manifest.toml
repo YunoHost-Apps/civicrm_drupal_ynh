@@ -22,13 +22,12 @@ cpe = "cpe:2.3:a:civicrm:civicrm"
 fund = "https://civicrm.org/civicrm/contribute/transact?reset=1&id=47"
 
 [integration]
-yunohost = ">= 11.2.30"
+yunohost = ">= 12.1.17"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
 
 ldap = false
-
 sso = false
 
 disk = "50M"
