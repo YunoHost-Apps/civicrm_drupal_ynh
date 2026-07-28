@@ -24,8 +24,10 @@ ynh_script_progression "Installing Composer..."
 
 ynh_config_add --template="composer.json" --destination="$install_dir/composer.json"
 
-ynh_composer_install
 ynh_composer_exec install --no-dev
+ynh_composer_exec require drupal/civicrm_drush
+ynh_delete_file_checksum "$install_dir/composer.json"
+ynh_store_file_checksum "$install_dir/composer.json"
 
 #=================================================
 # CREATE DRUSH ALIAS
@@ -65,12 +67,13 @@ pushd "$install_dir"
 	echo "\$settings['file_private_path'] = '../private';" >> "$install_dir/web/sites/default/settings.php"
 
 	chmod +w $install_dir/web/sites/default
-	_ynh_exec_with_drush_php cv core:install --cms-base-url="https://$domain$path" --db="mysql://$db_user:$db_pwd@localhost:3306/$db_name"
+	_ynh_exec_with_drush_php cv core:install --url="https://$domain$path" --db="mysql://$db_user:$db_pwd@localhost:3306/$db_name"
 	chmod -w $install_dir/web/sites/default
 
 	_ynh_exec_with_drush_php drush "@$app" -y config-set system.performance css.preprocess 0
 	_ynh_exec_with_drush_php drush "@$app" -y config-set system.performance js.preprocess 0
 	_ynh_exec_with_drush_php drush "@$app" cache:rebuild
+	_ynh_exec_with_drush_php drush "@$app" pm:install civicrm_drush
 popd
 
 ynh_store_file_checksum "$install_dir/web/sites/default/settings.php"
