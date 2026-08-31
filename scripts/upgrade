@@ -90,7 +90,7 @@ pushd "$install_dir"
 	_ynh_exec_with_drush_php "php$php_version" composer.phar update --with-dependencies
 	_ynh_exec_with_drush_php drush "@$app" -y updatedb
 	_ynh_exec_with_drush_php drush "@$app" pm:install civicrm_drush
-	_ynh_exec_with_drush_php cv ext:download uplang
+	_ynh_exec_with_drush_php cv ext:download uplang --force
 	_ynh_exec_with_drush_php cv upgrade:db
 	_ynh_exec_with_drush_php drush "@$app" cache-clear civicrm
 	_ynh_exec_with_drush_php drush "@$app" -y config-set system.performance css.preprocess 0
