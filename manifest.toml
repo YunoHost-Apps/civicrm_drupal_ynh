@@ -22,13 +22,12 @@ cpe = "cpe:2.3:a:civicrm:civicrm"
 fund = "https://civicrm.org/civicrm/contribute/transact?reset=1&id=47"
 
 [integration]
-yunohost = ">= 12.1.38"
+yunohost = ">= 12.1.40"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
 
 ldap = false
-
 sso = false
 
 disk = "50M"
@@ -110,4 +109,4 @@ ram.runtime = "50M"
     type = "mysql"
 
     [resources.composer]
-    version = "2.8.3"
+    version = "2.10.2"
