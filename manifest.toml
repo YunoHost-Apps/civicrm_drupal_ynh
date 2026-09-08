@@ -7,7 +7,7 @@ name = "CiviCRM on Drupal"
 description.en = "CRM for non-profits, NGOs and advocacy organizations"
 description.fr = "CRM pour organisations à but non lucratif et ONG"
 
-version = "6.17.3~ynh1"
+version = "6.18.0~ynh1"
 
 maintainers = ["yalh76"]
 
@@ -65,8 +65,8 @@ ram.runtime = "50M"
 
     [resources.sources.main]
     prefetch = false
-    url = "https://github.com/civicrm/civicrm-drupal-8/archive/refs/tags/6.17.3.tar.gz"
-    sha256 = "b1bf7a18779daf4e0cda569b458eca1d4f5dc5de29452f336b4ac8b57661c239"
+    url = "https://github.com/civicrm/civicrm-drupal-8/archive/refs/tags/6.18.0.tar.gz"
+    sha256 = "26fe51fd30157e3fc8be12f677379505bc476d793d7f4023391ab1185fb6fcf6"
 
     autoupdate.strategy = "latest_github_tag"
 
